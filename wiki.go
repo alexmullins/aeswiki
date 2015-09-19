@@ -52,7 +52,7 @@ func parseSBoxTable(table string) []byte {
 	tr := strings.NewReader(table)
 	scanner := bufio.NewScanner(tr)
 
-	b := make([]byte, 0)
+	b := make([]byte, 0, 256)
 
 	i := 0
 	for scanner.Scan() {
@@ -92,7 +92,7 @@ func parseSBoxBytes(table string) []byte {
 	tr := strings.NewReader(table)
 	scanner := bufio.NewScanner(tr)
 
-	b := make([]byte, 0)
+	b := make([]byte, 0, 256)
 
 	i := 0
 
