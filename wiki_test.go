@@ -51,6 +51,7 @@ func TestParseSBoxTable(t *testing.T) {
 }
 
 func BenchmarkParseSBoxTable(b *testing.B) {
+	b.ReportAllocs()
 	for n := 0; n < b.N; n++ {
 		parseSBoxTable(tableString)
 	}
@@ -64,6 +65,7 @@ func TestParseSBoxBytes(t *testing.T) {
 }
 
 func BenchmarkParseSBoxBytes(b *testing.B) {
+	b.ReportAllocs()
 	for n := 0; n < b.N; n++ {
 		parseSBoxBytes(byteString)
 	}

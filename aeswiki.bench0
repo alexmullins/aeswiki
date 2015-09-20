@@ -1,0 +1,4 @@
+PASS
+BenchmarkParseSBoxTable-4	  100000	     21976 ns/op	    7200 B/op	      83 allocs/op
+BenchmarkParseSBoxBytes-4	   30000	     53323 ns/op	   12080 B/op	     132 allocs/op
+ok  	github.com/alexmullins/aeswiki	4.577s
