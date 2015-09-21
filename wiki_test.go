@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"bytes"
+	"strings"
+	"testing"
+)
 
 var (
 	tableString = `   | 0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
@@ -54,6 +58,26 @@ func BenchmarkParseSBoxTable(b *testing.B) {
 	b.ReportAllocs()
 	for n := 0; n < b.N; n++ {
 		parseSBoxTable(tableString)
+	}
+}
+
+func BenchmarkReplaceString(b *testing.B) {
+	b.ReportAllocs()
+	a := "hello"
+	d := "l"
+	c := "Y"
+	for n := 0; n < b.N; n++ {
+		strings.Replace(a, d, c, -1)
+	}
+}
+
+func BenchmarkReplaceByte(b *testing.B) {
+	b.ReportAllocs()
+	a := []byte("hello")
+	d := []byte("l")
+	c := []byte("Y")
+	for n := 0; n < b.N; n++ {
+		bytes.Replace(a, d, c, -1)
 	}
 }
 
