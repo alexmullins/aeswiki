@@ -1,5 +1,5 @@
 AESWiki scrapes the AES Sbox Wikipedia page checking the
-SBox/Inverse table's bytes match the given bytes on the page.
+SBox/Inverse tables bytes match the given C++ init bytes on the page.
 https://en.wikipedia.org/wiki/Rijndael_S-box
 
 Uses goquery to scrape the pre tags. 
